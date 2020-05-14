@@ -1,5 +1,3 @@
-<p align="center"><div style="background:black;"><img src="https://github.com/powerlok/GoBarber/blob/master/frontend/src/assets/logo.svg" alt="GoBarber" /></div></p>
-
 # GoBarber
 
 ## Instalar Projetos
