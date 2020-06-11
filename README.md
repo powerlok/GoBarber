@@ -1,6 +1,6 @@
 # GoBarber
 
-# Utilização de boas praticas.
+# Utilização de boas práticas.
 * SOLID
 * DDD
 
