@@ -1,5 +1,9 @@
 # GoBarber
 
+# Utilização de boas praticas.
+* SOLID
+* DDD
+
 ## Instalar Projetos
  yarn install / yarn
 
