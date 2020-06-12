@@ -1,8 +1,9 @@
 # GoBarber
 
-# Utilização de boas práticas.
+# Backend - Utilização de boas práticas.
 * SOLID
 * DDD
+* TDD
 
 ## Instalar Projetos
  yarn install / yarn
