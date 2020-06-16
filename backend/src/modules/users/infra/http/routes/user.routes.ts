@@ -4,11 +4,11 @@ import multer from 'multer';
 import ensureAuthenticate from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 import uploadConfig from '@config/upload';
 
-import SessionsController from '../controllers/SessionsController';
+import UsersController from '../controllers/UsersController';
 import UserAvatarController from '../controllers/UserAvatarController';
 
 const usersRouter = Router();
-const sessionsController = new SessionsController();
+const sessionsController = new UsersController();
 const userAvatarController = new UserAvatarController();
 const upload = multer(uploadConfig);
 
