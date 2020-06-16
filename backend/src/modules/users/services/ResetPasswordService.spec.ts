@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-import FakeUsersRepository from '../repositories/fakes/FakesUsersRepository';
+import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import ResetPasswordService from './ResetPasswordService';
 import FakeUserTokensRepository from '../repositories/fakes/FakeUserTokensRepository';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
@@ -50,7 +50,7 @@ describe('ResetPasswordService', () => {
         token: 'non-existing-token',
         password: '123456',
       }),
-    ).resolves.toBeInstanceOf(AppError);
+    ).rejects.toBeInstanceOf(AppError);
   });
 
   it('should not be able to reset the password with non-existting user', async () => {
@@ -63,7 +63,7 @@ describe('ResetPasswordService', () => {
         token,
         password: '123456',
       }),
-    ).resolves.toBeInstanceOf(AppError);
+    ).rejects.toBeInstanceOf(AppError);
   });
 
   it('should not be able to reset the password if passed more 2 hours', async () => {
@@ -82,7 +82,7 @@ describe('ResetPasswordService', () => {
     });
 
     await expect(
-      await resetPassword.execute({
+      resetPassword.execute({
         password: '123123',
         token,
       }),

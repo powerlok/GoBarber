@@ -2,8 +2,9 @@ import AppError from '@shared/errors/AppError';
 import { injectable, inject } from 'tsyringe';
 // import User from '../infra/typeorm/entities/User';
 // import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
+import { isAfter, addHours } from 'date-fns';
 import IUserRepository from '../repositories/IUsersRepository';
-import IUserTokensRepository from '../repositories/IUsersTokensRepository';
+import IUserTokensRepository from '../repositories/IUserTokensRepository';
 import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 
 interface IRequest {
@@ -35,6 +36,13 @@ class ResetPasswordService {
 
     if (!user) {
       throw new AppError('User dows not exists');
+    }
+
+    const tokenCreateAt = userToken.created_at;
+    const compareDate = addHours(tokenCreateAt, 2);
+
+    if (isAfter(Date.now(), compareDate)) {
+      throw new AppError('Token expired');
     }
 
     user.password = await this.hashProvider.generateHash(password);
