@@ -39,7 +39,7 @@ class AuthenticateUserService {
     );
 
     if (!passwordMatch) {
-      throw new Error('Incorrent email/password combination.');
+      throw new AppError('Incorrent email/password combination.');
     }
 
     const { secret, expiresIn } = authconfig.jwt;
