@@ -12,9 +12,9 @@
          "@config/*": ["config/*"],
          "@shared/*": ["shared/*"]
        },
-      "esModuleInterop": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
-     "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true
   }
 }

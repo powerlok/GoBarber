@@ -5,9 +5,6 @@ import { uuid } from 'uuidv4';
 import IFindAllProvidersDTO from '@modules/users/dto/IFindAllProvidersDTO';
 import User from '../../infra/typeorm/entities/User';
 
-// SOLID
-// Liskov Substitution Principle
-
 class FakeUsersRepository implements IUsersRepository {
   private users: User[] = [];
 
