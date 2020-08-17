@@ -1,10 +1,10 @@
 import FakeAppontmentsRepository from '../repositories/fakes/FakeAppointsRepository';
-import ListProviderDayAvailabilityService from './ListProviderDayAvalibilityService';
+import ListProviderDayAvailabilityService from './ListProviderDayAvailabilityService';
 
 let fakeAppontmentsRepository: FakeAppontmentsRepository;
 let listProviderDayAvailability: ListProviderDayAvailabilityService;
 
-describe('ListProviderDayAvailability', () => {
+describe('ListProviderDayAvailabilityService', () => {
   beforeEach(() => {
     fakeAppontmentsRepository = new FakeAppontmentsRepository();
     listProviderDayAvailability = new ListProviderDayAvailabilityService(
